@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: uvpy
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn uvpy.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: universidad.settings
