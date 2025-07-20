@@ -1,0 +1,34 @@
+.grid-carreras {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  gap: 1rem; /* espacio entre las tarjetas */
+}
+
+.grid-container .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .grid-carreras {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem; /* espacio entre las tarjetas */
+    }
+
+}
+
+/* Para tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .contenedor {
+    width: 90%;
+    }
+
+    .grid-carreras {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 1rem; /* espacio entre las tarjetas */
+}
+}

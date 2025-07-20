@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <h1 class="title has-text-white"> Carreras </h1>
+        
+        <!-- NUEVA grilla -->
+        <div class="grid-carreras">
+            {% for carrera in carreras %}
+            <div class="card is-flex is-flex-direction-column is-fullheight">
+                {% if carrera.img %}
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="{{ carrera.img.url }}" alt="Imagen de {{ carrera.nombre }}">
+                    </figure>
+                </div>
+                {% endif %}
+                <div class="card-content is-flex-grow-1">
+                    <p class="title is-5"> {{ carrera.nombre }} </p>
+                    <p class="subtitle is-6"> {{ carrera.titulo }}</p>
+                    <p class="subtitle is-7"> {{ carrera.duracion }} </p>
+                    <p> {{ carrera.descripcion }} </p>
+                </div>
+                <footer class="card-footer">
+                    <a href="#" class="card-footer-item">Ver Más</a>
+                </footer>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>Uvpy</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
 </head>
@@ -11,76 +12,85 @@
     
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <div id="navbar-main" class="navbar-menu">
-                <div class="navbar-start">
+
+                <!-- Botón de hamburguesa -->
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-main">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbar-main" class="navbar-menu">
+            <div class="navbar-start">
                     
-                    <a class="navbar-item" href="">
-                        inicio
+                <a class="navbar-item" href="/">
+                    inicio
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="">
+                        institucional
                     </a>
-
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" href="">
-                            institucional
-                        </a>
                         
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item" href="">Autoridades</a>
-                            <a class="navbar-item" href="">Departametos</a>
-                            <a class="navbar-item" href="">Secretarias</a>
-                            <a class="navbar-item" href="">Sedes</a>
-                            <a class="navbar-item" href="">EA Bariloche</a>
-                            <a class="navbar-item" href="">Relaciones Internacionales</a>
-                        </div>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="">Autoridades</a>
+                        <a class="navbar-item" href="">Departametos</a>
+                        <a class="navbar-item" href="">Secretarias</a>
+                        <a class="navbar-item" href="">Sedes</a>
+                        <a class="navbar-item" href="">EA Bariloche</a>
+                        <a class="navbar-item" href="">Relaciones Internacionales</a>
                     </div>
-
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" href="">
-                            Carreras
-                        </a>
-                        
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item" href="">Carreras de Grado</a>
-                            <a class="navbar-item" href="">Ciclos de Licenciatura</a>
-                            <a class="navbar-item" href="">Carreras Cortas</a>
-                            <a class="navbar-item" href="">Posgrados</a>
-                            <a class="navbar-item" href="">Doctorados</a>
-                            <a class="navbar-item" href="">Ingresantes</a>
-                        </div>
-                    </div>
-
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" href="">
-                            Alumnos
-                        </a>
-                        
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item" href="">Calendario Academico</a>
-                            <a class="navbar-item" href="">Catedras</a>
-                            <a class="navbar-item" href="">Laboratorios</a>
-                            <a class="navbar-item" href="">SAE</a>
-                        </div>
-                    </div>
-
-                    <a class="navbar-item" href="">
-                        Investigacion
-                    </a>
-
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" href="">
-                            Extension
-                        </a>
-                        
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item" href="">Cursos y Seminarios</a>
-                            <a class="navbar-item" href="">Pasantias</a>
-                            <a class="navbar-item" href="">Radio FM94.3</a>
-                            <a class="navbar-item" href="">Graduados</a>
-                        </div>
-                    </div>
-
                 </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="/carreras/">
+                        Carreras
+                    </a>
+                        
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="">Carreras de Grado</a>
+                        <a class="navbar-item" href="">Ciclos de Licenciatura</a>
+                        <a class="navbar-item" href="">Carreras Cortas</a>
+                        <a class="navbar-item" href="">Posgrados</a>
+                        <a class="navbar-item" href="">Doctorados</a>
+                        <a class="navbar-item" href="">Ingresantes</a>
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="">
+                        Alumnos
+                    </a>
+                        
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="">Calendario Academico</a>
+                        <a class="navbar-item" href="">Catedras</a>
+                        <a class="navbar-item" href="">Laboratorios</a>
+                        <a class="navbar-item" href="">SAE</a>
+                    </div>
+                </div>
+
+                <a class="navbar-item" href="">
+                    Investigacion
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="">
+                        Extension
+                    </a>
+                        
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="">Cursos y Seminarios</a>
+                        <a class="navbar-item" href="">Pasantias</a>
+                        <a class="navbar-item" href="">Radio FM94.3</a>
+                        <a class="navbar-item" href="">Graduados</a>
+                    </div>
+                </div>
+
             </div>
         </div>
+
 
         <div class="navbar-end">
             <div class="navbar-item">
@@ -96,5 +106,18 @@
     <div id="content">
         {% block content %}{% endblock %}
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const burger = document.querySelector('.navbar-burger');
+        const menu = document.getElementById(burger.dataset.target);
+
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+        });
+        });
+    </script>
+
 </body>
 </html>
